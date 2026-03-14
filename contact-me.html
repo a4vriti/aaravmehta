@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aarav Mehta Portfolio</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#14213d;
+color:white;
+}
+
+/* NAVIGATION */
+
+.main-nav{
+background-color:#000;
+width:100%;
+height:100px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:40px;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
+}
+
+.main-nav li{
+list-style:none;
+position:relative;
+}
+
+.main-nav li a{
+display:block;
+font-size:18px;
+padding:35px 20px;
+text-decoration:none;
+text-align:center;
+color:#fff;
+transition:0.3s;
+}
+
+.main-nav li a:hover{
+background:#fca311;
+color:#000;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px;
+}
+
+.hero h1{
+font-size:120px;
+color:#fca311;
+font-weight:lighter;
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+animation:fadeDown 1s ease;
+}
+
+@keyframes fadeDown{
+from{
+opacity:0;
+transform:translateY(-40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* CONTACT SECTION */
+
+.contact{
+padding:60px 10px;
+}
+
+.contact-container{
+max-width:1000px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+/* CONTACT INFO */
+
+.contact-info{
+opacity:0;
+animation:slideUp 1s ease forwards;
+animation-delay:0.3s;
+}
+
+.contact h2{
+font-size:40px;
+color:#fca311;
+font-family:'Courier New', Courier, monospace;
+margin-bottom:20px;
+text-align:center;
+}
+
+.contact-info p{
+margin:10px 0;
+font-size:22px;
+font-family:'Courier New', Courier, monospace;
+font-weight:bold;
+transition:0.3s;
+padding:6px;
+}
+
+.contact-info p:hover{
+background:black;
+color:#fca311;
+border-left:4px solid #fca311;
+padding-left:12px;
+}
+
+/* FORM */
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:25px;
+background:#1d2b4f;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+opacity:0;
+animation:slideUp 1s ease forwards;
+animation-delay:0.6s;
+}
+
+.contact-form h2{
+text-align:center;
+}
+
+/* FLOATING INPUTS */
+
+.input-group{
+position:relative;
+}
+
+.input-group input,
+.input-group textarea{
+width:100%;
+padding:14px;
+border:none;
+border-radius:5px;
+font-size:16px;
+outline:none;
+background:white;
+color:black;
+}
+
+.input-group label{
+position:absolute;
+left:12px;
+top:14px;
+font-size:14px;
+color:#3b4250;
+transition:0.3s;
+pointer-events:none;
+font-family:'Courier New', Courier, monospace;
+}
+
+/* FLOATING LABEL */
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label{
+top:-10px;
+left:8px;
+background:#1d2b4f;
+padding:0 6px;
+font-size:12px;
+color:#fca311;
+}
+
+textarea{
+resize:none;
+height:120px;
+}
+
+/* BUTTON */
+
+.contact-form button{
+padding:12px;
+border:none;
+background:#fca311;
+color:black;
+font-weight:bold;
+cursor:pointer;
+border-radius:5px;
+font-size:16px;
+transition:0.3s;
+font-family:'Courier New', Courier, monospace;
+}
+
+.contact-form button:hover{
+background:#000000;
+color: #fca311;
+border-color: #fca311;
+border-width: 1px;
+border-style: solid;
+
+
+}
+
+/* OPENING ANIMATION */
+
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* FOOTER */
+
+.footer{
+background:#000;
+width:100%;
+padding:25px 20px;
+box-shadow:0 -4px 10px rgba(0,0,0,0.4);
+}
+
+.footer-content{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:30px;
+flex-wrap:wrap;
+color:#fff;
+font-size:18px;
+}
+
+.footer-content span{
+opacity:0.8;
+}
+
+.footer-email{
+color:#fff;
+text-decoration:none;
+transition:0.3s;
+}
+
+.footer-email:hover{
+color:#fca311;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:50px;
+}
+
+.contact-container{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<ul class="main-nav">
+<li><a href="index.html">Home</a></li>
+<li><a href="my-profile.html">About</a></li>
+<li><a href="my-works.html">My Works</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+<h1>GET IN TOUCH</h1>
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section class="contact">
+
+<div class="contact-container">
+
+<div class="contact-info">
+
+<h2>Contact Me</h2>
+
+<p>Name: Aarav Mehta</p>
+
+<p>Phone: <span id="phoneNumber"></span></p>
+
+<p>Email: <span id="emailAddress"></span></p>
+
+<p>Location: Chandigarh, India</p>
+
+</div>
+
+<form class="contact-form">
+
+<h2>Send Me a Message</h2>
+
+<div class="input-group">
+<input type="text" placeholder=" " required>
+<label>Your Name</label>
+</div>
+
+<div class="input-group">
+<input type="email" placeholder=" " required>
+<label>Your Email</label>
+</div>
+
+<div class="input-group">
+<textarea placeholder=" " required></textarea>
+<label>Your Message</label>
+</div>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<div class="footer-content">
+
+<span>© 2026 All rights reserved</span>
+<span>Created with ♡ by Aavriti Shaw</span>
+
+<a href="mailto:aavritishaw@gmail.com" class="footer-email">
+aavritishaw@gmail.com
+</a>
+
+</div>
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const phone = "+91 98765 43210";
+const email = "aarav.mehta@email.com";
+
+document.getElementById("phoneNumber").innerHTML =
+`<a href="tel:${phone.replace(/\s/g,'')}" style="color:white;text-decoration:none;">${phone}</a>`;
+
+document.getElementById("emailAddress").innerHTML =
+`<a href="mailto:${email}" style="color:white;text-decoration:none;">${email}</a>`;
+
+</script>
+
+</body>
+</html>
+
