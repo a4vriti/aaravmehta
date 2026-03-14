@@ -1,296 +1,329 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-<title>HomePage Portfolio</title>
+    <title>HomePage Portfolio</title>
 
-<!-- Bootstrap CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* ===============================
+           GLOBAL STYLES
+        =============================== */
+        body {
+            background-color: #14213d;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-<style>
+        /* ===============================
+           NAVIGATION BAR
+        =============================== */
+        .main-nav {
+            background-color: #000000;
+            width: 100%;
+            height: 100px;
 
-body{
-background-color: #14213d;
-margin: 0;
-font-family: Arial, sans-serif;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
 
-/* NAVIGATION */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 
-.main-nav{
-background-color: #000000;
-width: 100%;
-height: 100px;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 40px;
-box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-margin: 0;
-padding: 0;
-}
+            margin: 0;
+            padding: 0;
+        }
 
-.main-nav li{
-list-style-type: none;
-position: relative;
-}
+        .main-nav li {
+            list-style-type: none;
+            position: relative;
+        }
 
-.main-nav li a{
-display: block;
-font-size: 18px;
-padding: 35px 20px;
-text-decoration: none;
-text-align: center;
-color: #ffffff;
-transition: 0.3s ease;
-}
+        .main-nav li a {
+            display: block;
+            font-size: 18px;
+            padding: 35px 20px;
+            text-decoration: none;
+            text-align: center;
+            color: #ffffff;
 
-.main-nav li a:hover{
-background-color: #fca311;
-color: #000;
-}
+            transition: 0.3s ease;
+        }
 
-/* HERO */
+        .main-nav li a:hover {
+            background-color: #fca311;
+            color: #000;
+        }
 
-.hero{
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 120px;
-padding: 30px;
-min-height: 80vh;
-animation: fadeIn 1.2s ease-in-out;
-}
+        /* ===============================
+           DROPDOWN MENU
+        =============================== */
+        .main-nav li ul.dropdown {
+            position: absolute;
+            top: 100px;
+            left: 0;
 
-.hero-image img{
-width: 400px;
-height: auto;
-transition: transform 0.4s ease;
-}
+            background-color: #000000;
+            display: none;
 
-.hero-image img:hover{
-transform: scale(1.05);
-}
+            padding: 0;
+            min-width: 150px;
 
-.hero-text{
-max-width: 800px;
-animation: slideUp 1s ease-in-out;
-}
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
 
-.hero-text h1{
-font-size: 120px;
-color: #fca311;
-font-weight: lighter;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-margin: 0;
-}
+        .main-nav li ul.dropdown li {
+            display: block;
+        }
 
-.hero-text h2{
-font-size: 26px;
-color: #ffffff;
-font-family: 'Courier New', Courier, monospace;
-margin-top: 15px;
-line-height: 1.5;
-}
+        .main-nav li:hover ul.dropdown {
+            display: block;
+        }
 
-.hero-text a{
-background-color: #fca311;
-font-family: 'Courier New', Courier, monospace;
-margin-top: 15px;
-color: #14213d;
-line-height: 1.5;
-padding: 10px;
-font-weight:bold;
-text-decoration : none;
-font-size: 22px;
-}
+        /* ===============================
+           HERO SECTION
+        =============================== */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-.hero-text a:hover{
-background-color: #000000;
-color:#fca311;
-}
+            gap: 120px;
+            padding: 30px;
+            min-height: 80vh;
 
-/* ANIMATIONS */
+            animation: fadeIn 1.2s ease-in-out;
+        }
 
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
+        .hero-image img {
+            width: 400px;
+            height: auto;
 
-@keyframes slideUp{
-from{
-transform: translateY(40px);
-opacity:0;
-}
-to{
-transform: translateY(0);
-opacity:1;
-}
-}
+            transition: transform 0.4s ease;
+        }
 
-/* FOOTER */
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
 
-.footer{
-background-color:#000000;
-width:97%;
-padding:25px 20px;
-box-shadow:0 -4px 10px rgba(0,0,0,0.4);
-height:18%;
-}
+        .hero-text {
+            max-width: 800px;
+            animation: slideUp 1s ease-in-out;
+        }
 
-.footer-content{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:30px;
-flex-wrap:wrap;
-color:#ffffff;
-font-size:18px;
-}
+        .hero-text h1 {
+            font-size: 120px;
+            color: #fca311;
+            font-weight: lighter;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            margin: 0;
+        }
 
-.footer-content span{
-opacity:0.8;
-}
+        .hero-text h2 {
+            font-size: 26px;
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
 
-.footer-email{
-color:#ffffff;
-text-decoration:none;
-border-bottom:1px solid transparent;
-transition:0.3s ease;
-}
+        .hero-text a {
+            background-color: #fca311;
+            font-family: 'Courier New', Courier, monospace;
 
-.footer-email:hover{
-color:#fca311;
-border-bottom:1px solid #fca311;
-}
+            margin-top: 15px;
+            color: #14213d;
+            line-height: 1.5;
 
-/* RESPONSIVE */
+            padding: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 22px;
+        }
 
-@media (max-width:1024px){
+        .hero-text a:hover {
+            background-color: #000000;
+            color: #fca311;
+        }
 
-.hero{
-gap:60px;
-}
+        /* ===============================
+           ANIMATIONS
+        =============================== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-.hero-text h1{
-font-size:80px;
-}
+        @keyframes slideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
-}
+        /* ===============================
+           FOOTER
+        =============================== */
+        .footer {
+            background-color: #000000;
+            width: 97%;
+            padding: 25px 20px;
 
-@media (max-width:768px){
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.4);
 
-.main-nav{
-flex-direction:column;
-height:auto;
-padding:10px 0;
-}
+            height: 18%;
+        }
 
-.main-nav li a{
-padding:15px;
-}
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-.hero{
-flex-direction:column;
-text-align:center;
-gap:40px;
-}
+            gap: 30px;
+            flex-wrap: wrap;
 
-.hero-image img{
-width:250px;
-}
+            color: #ffffff;
+            font-size: 18px;
+        }
 
-.hero-text h1{
-font-size:50px;
-}
+        .footer-content span {
+            opacity: 0.8;
+        }
 
-.hero-text h2{
-font-size:18px;
-}
+        .footer-email {
+            color: #ffffff;
+            text-decoration: none;
 
-.footer-content{
-flex-direction:column;
-gap:10px;
-text-align:center;
-}
+            border-bottom: 1px solid transparent;
+            transition: 0.3s ease;
+        }
 
-}
+        .footer-email:hover {
+            color: #fca311;
+            border-bottom: 1px solid #fca311;
+        }
 
-</style>
+        /* ===============================
+           RESPONSIVE DESIGN
+        =============================== */
+
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .hero {
+                gap: 60px;
+            }
+
+            .hero-text h1 {
+                font-size: 80px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            .main-nav {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .main-nav li a {
+                padding: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-image img {
+                width: 250px;
+            }
+
+            .hero-text h1 {
+                font-size: 50px;
+            }
+
+            .hero-text h2 {
+                font-size: 18px;
+            }
+
+            .main-nav li ul.dropdown {
+                position: static;
+                box-shadow: none;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+    <!-- ===============================
+         NAVIGATION BAR
+    =============================== -->
+    <nav>
+        <ul class="main-nav">
+            <li>
+                <a href="my-profile.html">About</a>
+            </li>
 
-<div class="container-fluid p-0">
+            <li>
+                <a href="my-works.html">My works</a>
+            </li>
 
-<nav>
-<ul class="main-nav">
+            <li>
+                <a href="contact-me.html">Get in touch</a>
+            </li>
+        </ul>
+    </nav>
 
-<li>
-<a href="my-profile.html">About</a>
-</li>
+    <!-- ===============================
+         HERO SECTION
+    =============================== -->
+    <div class="hero">
 
-<li>
-<a href="my-works.html">My works</a>
-</li>
+        <div class="hero-image">
+            <img src="portfolio-picture.png" alt="Portfolio Picture">
+        </div>
 
-<li>
-<a href="contact-me.html">Get in touch</a>
-</li>
+        <div class="hero-text">
+            <h1>AARAV MEHTA</h1>
 
-</ul>
-</nav>
+            <h2>
+                I am an aspiring developer with a strong academic foundation in computer science
+                and practical experience through projects in Java, Python and web technologies.
+            </h2>
 
-</div>
+            <a href="my-works.html">View My work</a>
+        </div>
 
-<!-- HERO SECTION -->
+    </div>
 
-<div class="container">
+    <!-- ===============================
+         FOOTER
+    =============================== -->
+    <div class="footer">
+        <div class="footer-content">
 
-<div class="row hero align-items-center justify-content-center">
+            <span>© 2026 All rights reserved</span>
 
-<div class="col-lg-5 hero-image text-center">
+            <span>Created with ♡ by Aavriti Shaw</span>
 
-<img src="portfolio-picture.png" class="img-fluid" alt="Portfolio Picture">
+            <a href="mailto:aavritishaw@gmail.com" class="footer-email">
+                aavritishaw@gmail.com
+            </a>
 
-</div>
-
-<div class="col-lg-7 hero-text">
-
-<h1>AARAV MEHTA</h1>
-
-<h2>
-I am an aspiring developer with a strong academic foundation in computer science and practical experience through projects in Java, Python and web technologies.
-</h2>
-
-<a href="my-works.html">View My work</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- FOOTER -->
-
-<div class="container-fluid footer">
-
-<div class="footer-content">
-
-<span>© 2026 All rights reserved</span>
-
-<span>Created with ♡ by Aavriti Shaw</span>
-
-<a href="mailto:aavritishaw@gmail.com" class="footer-email">
-aavritishaw@gmail.com
-</a>
-
-</div>
-
-</div>
+        </div>
+    </div>
 
 </body>
-
 </html>
